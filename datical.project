@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <dbproject:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbproject="http://datical.com/db/project/1.0" name="ECloudIntegrationDemo" storedLogicExternal="true" deployThreshold="stopOnError" runtimeCredentials="false" multiSchema="false" dbSchemaDefinition="dbDef" enableRowCount="true">
-  <dbDefs xsi:type="dbproject:SqlServerDbDef" name="ECLOUDDEMO_REF" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="localhost" port="1433" username="sa" password="bXNzcWwyMDA4c2FwYXNz" contexts="REF" databaseName="ecloudintegration_ref" integratedSecurity="false" applicationName="Datical DB"/>
-  <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='ECLOUDDEMO_REF']"/>
+  <dbDefs xsi:type="dbproject:SqlServerDbDef" name="REF" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="localhost" port="1433" username="sa" password="bXNzcWwyMDA4c2FwYXNz" contexts="REF" databaseName="ecloudintegration_ref" integratedSecurity="false" applicationName="Datical DB"/>
+  <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='REF']"/>
   <changelog href="platform:/resource/ECloudIntegrationDemo/Changelog/changelog.xml#//@databaseChangeLog"/>
 </dbproject:Project>

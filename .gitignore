@@ -1,0 +1,10 @@
+Logs/
+Reports/
+Snapshots/
+Profiles/
+/.classpath
+/.metadata
+/.reporttemplates
+/daticaldb.properties
+/daticaldb.log
+daticaldb*.log
