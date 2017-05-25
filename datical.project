@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
-<dbproject:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbproject="http://datical.com/db/project/1.0" name="ECloudIntegrationDemo" storedLogicExternal="true" deployThreshold="stopOnError" runtimeCredentials="false" multiSchema="false" dbSchemaDefinition="dbDef" enableRowCount="true">
-  <dbDefs xsi:type="dbproject:SqlServerDbDef" name="REF" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="localhost" port="1433" username="sa" password="bXNzcWwyMDA4c2FwYXNz" contexts="REF" databaseName="ecloudintegration_ref" integratedSecurity="false" applicationName="Datical DB"/>
+<dbproject:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbproject="http://datical.com/db/project/1.0" name="ECloudIntegrationDemo" storedLogicExternal="true" deployThreshold="stopOnError" requireOptions="true" projectsId="0b856ca3-bc57-4839-aa75-15920c8452f6" runtimeCredentials="false" multiSchema="false" dbSchemaDefinition="dbDef" enableRowCount="true">
+  <dbDefs xsi:type="dbproject:SqlServerDbDef" name="REF" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="localhost" port="1433" username="sa" password="bXNzcWwyMDA4c2FwYXNz" contexts="REF" labels="$all" databaseName="ecloudintegration_ref" integratedSecurity="false" applicationName="Datical DB"/>
   <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='REF']"/>
-  <changelog href="platform:/resource/ECloudIntegrationDemo/Changelog/changelog.xml#//@databaseChangeLog"/>
+  <changelog href="Changelog/changelog.xml#//@databaseChangeLog"/>
+  <auditDB xsi:type="dbproject:OracleDbDef" name="AUDIT_DB_AWS" driver="oracle.jdbc.OracleDriver" hostname="aws-db1-rhel6.datical.net" port="1521" username="AUDIT_DB" password="a2V2aW5pc2Nvb2wjMQ==" dbDefType="audit" serviceName="pdborcl_sp.datical.net" enableCompression="false" rowsPerBatch="10000"/>
 </dbproject:Project>

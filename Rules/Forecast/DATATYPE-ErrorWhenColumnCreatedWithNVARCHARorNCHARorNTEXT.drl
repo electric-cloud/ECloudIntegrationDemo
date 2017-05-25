@@ -1,10 +1,17 @@
+/*
+@author Laurent Rochette
+@version 1.0
+@date May 25,2017
+@description Error when column type is NVARCHAR, NCHAR or NTEXT.
+*/
+
 package com.datical.hammer.core.forecast
 
 dialect "mvel"
 
+import java.lang.String;
 import java.util.List;
-import java.util.Arrays;
-import java.util.ArrayList;
+import org.apache.commons.lang.StringUtils;
 
 import com.datical.hammer.core.rules.Response;
 import com.datical.hammer.core.rules.Response.ResponseType;
@@ -25,8 +32,6 @@ rule "NVARCHAR, NCHAR, NTEXT are NOT allowed in new tables."
 		insert(new Response(ResponseType.FAIL, errorMessage, drools.getRule().getName()));
 	end
 
-
-
 rule "NVARCHAR, NCHAR, NTEXT are NOT allowed in new columns."
 	when
 		$addColumn : AddColumnType( )
@@ -39,7 +44,11 @@ rule "NVARCHAR, NCHAR, NTEXT are NOT allowed in new columns."
 	end
 
 function boolean isForbidden(String type) {
-	List<String> forbiddenType=new ArrayList<String>(Arrays.asList("NVARCHAR", "NCHAR", "NTEXT"));
+	String[] forbiddenTypeList=new String[]{"NVARCHAR", "NCHAR", "NTEXT"};
 
-	return (forbiddenType.contains(type));
+	// check for NCHAR vs NCHAR(30) so you cannot use direct comparison 
+	// as NCHAR and NCHAR(30) would be different
+   	System.out.println("Type: " + type + 
+		"  Boolean result: " + StringUtils.startsWithAny(StringUtils.upperCase(type), forbiddenTypeList));
+	return StringUtils.startsWithAny(StringUtils.upperCase(type), forbiddenTypeList);
 }
