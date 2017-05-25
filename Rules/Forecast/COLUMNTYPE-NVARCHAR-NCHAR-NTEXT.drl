@@ -1,0 +1,45 @@
+package com.datical.hammer.core.forecast
+
+dialect "mvel"
+
+import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
+
+import com.datical.hammer.core.rules.Response;
+import com.datical.hammer.core.rules.Response.ResponseType;
+import org.liquibase.xml.ns.dbchangelog.AddColumnType;
+import org.liquibase.xml.ns.dbchangelog.ColumnAddColumnType;
+import org.liquibase.xml.ns.dbchangelog.CreateTableType;
+import org.liquibase.xml.ns.dbchangelog.ColumnType;
+
+rule "NVARCHAR, NCHAR, NTEXT are NOT allowed in new tables."
+	when
+		//<column name="CHAR_COL" type="NCHAR">
+		$createTable : CreateTableType( )
+		$types : List( size > 0 )
+							from collect(ColumnType(isForbidden(type))
+								from $createTable.getColumn())
+	then
+		String errorMessage = drools.getRule().getName();
+		insert(new Response(ResponseType.FAIL, errorMessage, drools.getRule().getName()));
+	end
+
+
+
+rule "NVARCHAR, NCHAR, NTEXT are NOT allowed in new columns."
+	when
+		$addColumn : AddColumnType( )
+		$defaultValues : List( size > 0 )
+							from collect(ColumnAddColumnType(isForbidden(type))
+								from $addColumn.getColumn())
+	then
+		String errorMessage = drools.getRule().getName();
+		insert(new Response(ResponseType.FAIL, errorMessage, drools.getRule().getName()));
+	end
+
+function boolean isForbidden(String type) {
+	List<String> forbiddenType=new ArrayList<String>(Arrays.asList("NVARCHAR", "NCHAR", "NTEXT"));
+
+	return (forbiddenType.contains(type));
+}
