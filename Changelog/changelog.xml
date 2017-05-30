@@ -5,9 +5,35 @@
             <column name="ID" type="INT">
                 <constraints nullable="true" primaryKey="true" unique="false"/>
             </column>
-           <column name="NAME" type="nvarchar(30)">
+            <column name="NAME" type="nvarchar(30)">
                 <constraints nullable="true" primaryKey="false" unique="false"/>
             </column>
         </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="9514a22cfc9538da1a48e601d3fc08d7" author="Administrator (generated)" created="2017-05-30 15:15-0500" id="5de3-1 (createTable tableName=Employees)" labels="$all, schema_mssql_globoface2.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable tableName="Employees">
+            <column name="EmployeeID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastName" type="nvarchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FirstName" type="nvarchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Title" type="nvarchar(30)"/>
+            <column name="BirthDate" type="datetime"/>
+            <column name="HireDate" type="datetime"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="HomePhone" type="nvarchar(24)"/>
+            <column name="Extension" type="nvarchar(4)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="9514a22cfc9538da1a48e601d3fc08d7" author="Administrator (generated)" created="2017-05-30 15:15-0500" id="5de3-2 (addPrimaryKey constraintName=PK__Employee__7AD04FF15E6C7143, tableName=Employees)" labels="$all, schema_mssql_globoface2.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="EmployeeID" constraintName="PK__Employee__7AD04FF15E6C7143" tableName="Employees"/>
     </changeSet>
 </databaseChangeLog>
