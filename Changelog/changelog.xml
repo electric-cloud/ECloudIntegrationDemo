@@ -64,4 +64,10 @@
     <changeSet appdba:scriptChecksum="d13fe8772d88058da59425f2aa4d496b" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="a0tt-2 (addPrimaryKey constraintName=PK_Region, tableName=Region)" labels="create_table_region.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="RegionID" constraintName="PK_Region" schemaName="dbo" tableName="Region"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="04fe42532c094998f68e4596c9218de1" author="Laurent Rochette" id="20170531165522344_add_region_data" labels="add_region_data.sql">
+        <comment>
+            Add data
+        </comment>
+        <appdba:sqlcmd path="data_dml/20170531165522344_add_region_data.sql" removeOuts="First"/>
+    </changeSet>
 </databaseChangeLog>
