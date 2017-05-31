@@ -1,2 +1,37 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:appdba="http://www.datical.net/xml/ns/appdba" xmlns:datical="http://www.datical.net/xml/ns/datical" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:storedlogic="http://www.datical.net/xml/ns/storedlogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" logicalFilePath="Changelog/changelog.xml" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd"/>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:appdba="http://www.datical.net/xml/ns/appdba" xmlns:datical="http://www.datical.net/xml/ns/datical" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:storedlogic="http://www.datical.net/xml/ns/storedlogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" logicalFilePath="Changelog/changelog.xml" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet appdba:scriptChecksum="e2721f8fdf4c1b0e8362a35ebee1cf7e" author="Datical (generated)" id="TAG_create_table_employee.sql" labels="create_table_employee.sql">
+        <tagDatabase datical:rollbackScript="sql\20170531152632_create_table_employee-rollback.sql" tag="create_table_employee.sql"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="e2721f8fdf4c1b0e8362a35ebee1cf7e" author="Administrator (generated)" created="2017-05-31 15:26-0500" id="zxqp-1 (createTable tableName=Employees)" labels="create_table_employee.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Employees">
+            <column autoIncrement="true" name="EmployeeID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastName" type="nvarchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FirstName" type="nvarchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Title" type="nvarchar(30)"/>
+            <column name="TitleOfCourtesy" type="nvarchar(25)"/>
+            <column name="BirthDate" type="datetime"/>
+            <column name="HireDate" type="datetime"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="HomePhone" type="nvarchar(24)"/>
+            <column name="Extension" type="nvarchar(4)"/>
+            <column name="Photo" type="image"/>
+            <column name="Notes" type="ntext"/>
+            <column name="ReportsTo" type="int"/>
+            <column name="PhotoPath" type="nvarchar(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="e2721f8fdf4c1b0e8362a35ebee1cf7e" author="Administrator (generated)" created="2017-05-31 15:26-0500" id="zxqp-2 (addPrimaryKey constraintName=PK_Employees, tableName=Employees)" labels="create_table_employee.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="EmployeeID" constraintName="PK_Employees" schemaName="dbo" tableName="Employees"/>
+    </changeSet>
+</databaseChangeLog>
