@@ -34,4 +34,34 @@
     <changeSet appdba:scriptChecksum="e2721f8fdf4c1b0e8362a35ebee1cf7e" author="Administrator (generated)" created="2017-05-31 15:26-0500" id="zxqp-2 (addPrimaryKey constraintName=PK_Employees, tableName=Employees)" labels="create_table_employee.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="EmployeeID" constraintName="PK_Employees" schemaName="dbo" tableName="Employees"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="88e5af28c372aba04d3179c4a4cfd0ec" author="Datical (generated)" id="TAG_create_table_customerDemographics.sql" labels="create_table_customerDemographics.sql">
+        <tagDatabase datical:rollbackScript="sql\20170531153414_create_table_customerDemographics-rollback.sql" tag="create_table_customerDemographics.sql"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="88e5af28c372aba04d3179c4a4cfd0ec" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="9th2-1 (createTable tableName=CustomerDemographics)" labels="create_table_customerdemographics.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="CustomerDemographics">
+            <column name="CustomerTypeID" type="nchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CustomerDesc" type="ntext"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="88e5af28c372aba04d3179c4a4cfd0ec" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="9th2-2 (addPrimaryKey constraintName=PK_CustomerDemographics, tableName=CustomerDemographics)" labels="create_table_customerdemographics.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="CustomerTypeID" constraintName="PK_CustomerDemographics" schemaName="dbo" tableName="CustomerDemographics"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="d13fe8772d88058da59425f2aa4d496b" author="Datical (generated)" id="TAG_create_table_region.sql" labels="create_table_region.sql">
+        <tagDatabase datical:rollbackScript="sql\20170531153426_create_table_region-rollback.sql" tag="create_table_region.sql"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="d13fe8772d88058da59425f2aa4d496b" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="a0tt-1 (createTable tableName=Region)" labels="create_table_region.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Region">
+            <column name="RegionID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RegionDescription" type="nchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="d13fe8772d88058da59425f2aa4d496b" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="a0tt-2 (addPrimaryKey constraintName=PK_Region, tableName=Region)" labels="create_table_region.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="RegionID" constraintName="PK_Region" schemaName="dbo" tableName="Region"/>
+    </changeSet>
 </databaseChangeLog>
