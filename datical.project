@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <dbproject:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbproject="http://datical.com/db/project/1.0" name="ECloudIntegrationDemo" storedLogicExternal="true" deployThreshold="stopOnError" requireOptions="true" projectsId="4a23f528-3af2-4895-9c93-a4947d0f6b94" runtimeCredentials="false" multiSchema="true" dbSchemaDefinition="project" schemaSelectionStep="REF" trackingSchema="tracking" enableRowCount="true">
   <dbDefs xsi:type="dbproject:SqlServerDbDef" name="REF" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="WIN-20E107KB4TN" port="1433" username="lrochette" password="bHJvY2hldHRl" contexts="" databaseName="ecloudintegration_ref" integratedSecurity="false" applicationName="Datical DB"/>
-  <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='REF']"/>
+  <dbDefs xsi:type="dbproject:SqlServerDbDef" name="DEV" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="WIN-20E107KB4TN" port="1433" username="lrochette" password="bHJvY2hldHRl" environment="DEV" databaseName="ecloudintegration_dev" integratedSecurity="false" applicationName="Datical DB"/>
+  <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='REF'] //@dbDefs[name='DEV']"/>
   <changelog href="platform:/resource/ECloudIntegrationDemo/Changelog/changelog.xml#//@databaseChangeLog"/>
   <auditDB xsi:type="dbproject:OracleDbDef" name="AUDIT_DB_AWS" driver="oracle.jdbc.OracleDriver" hostname="aws-db1-rhel6.datical.net" port="1521" username="AUDIT_DB" password="a2V2aW5pc2Nvb2wjMQ==" dbDefType="audit" serviceName="pdborcl_sp.datical.net" enableCompression="false" rowsPerBatch="10000"/>
   <schemas name="dbo"/>
