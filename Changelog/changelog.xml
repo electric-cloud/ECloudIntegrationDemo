@@ -107,4 +107,18 @@
     <changeSet appdba:scriptChecksum="5d14d8b4564951f0085033c5574dbd2b" author="TestUser1 (generated)" created="2017-06-02 10:11-0500" id="mfmj-2 (addPrimaryKey constraintName=PK_Customers, tableName=Customers)" labels="create_table_customer.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CustomerID" constraintName="PK_Customers" schemaName="dbo" tableName="Customers"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="8477a8e689b8c0fea47a4bf3c5b5b89c" author="TestUser1 (generated)" created="2017-06-02 10:49-0500" id="ynq4-1 (createTable tableName=Shippers)" labels="create_table_shippers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Shippers">
+            <column autoIncrement="true" name="ShipperID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Phone" type="nvarchar(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="8477a8e689b8c0fea47a4bf3c5b5b89c" author="TestUser1 (generated)" created="2017-06-02 10:49-0500" id="ynq4-2 (addPrimaryKey constraintName=PK_Shippers, tableName=Shippers)" labels="create_table_shippers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="ShipperID" constraintName="PK_Shippers" schemaName="dbo" tableName="Shippers"/>
+    </changeSet>
 </databaseChangeLog>
