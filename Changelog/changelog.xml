@@ -121,4 +121,27 @@
     <changeSet appdba:scriptChecksum="8477a8e689b8c0fea47a4bf3c5b5b89c" author="TestUser1 (generated)" created="2017-06-02 10:49-0500" id="ynq4-2 (addPrimaryKey constraintName=PK_Shippers, tableName=Shippers)" labels="create_table_shippers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="ShipperID" constraintName="PK_Shippers" schemaName="dbo" tableName="Shippers"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="2e814d3c714ca8f7287ee538fb0acfd4" author="TestUser1 (generated)" created="2017-06-02 14:16-0500" id="e109-1 (createTable tableName=Suppliers)" labels="$all, create_table_suppliers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Suppliers">
+            <column autoIncrement="true" name="SupplierID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ContactName" type="nvarchar(30)"/>
+            <column name="ContactTitle" type="nvarchar(30)"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="Phone" type="nvarchar(24)"/>
+            <column name="Fax" type="nvarchar(24)"/>
+            <column name="HomePage" type="ntext"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="2e814d3c714ca8f7287ee538fb0acfd4" author="TestUser1 (generated)" created="2017-06-02 14:16-0500" id="e109-2 (addPrimaryKey constraintName=PK_Suppliers, tableName=Suppliers)" labels="$all, create_table_suppliers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="SupplierID" constraintName="PK_Suppliers" schemaName="dbo" tableName="Suppliers"/>
+    </changeSet>
 </databaseChangeLog>
