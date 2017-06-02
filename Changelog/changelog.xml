@@ -64,4 +64,84 @@
     <changeSet appdba:scriptChecksum="d13fe8772d88058da59425f2aa4d496b" author="Administrator (generated)" created="2017-05-31 15:34-0500" id="a0tt-2 (addPrimaryKey constraintName=PK_Region, tableName=Region)" labels="create_table_region.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="RegionID" constraintName="PK_Region" schemaName="dbo" tableName="Region"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="04fe42532c094998f68e4596c9218de1" author="Laurent Rochette" id="20170531165522344_add_region_data" labels="add_region_data.sql">
+        <comment>
+            Add data
+        </comment>
+        <appdba:sqlcmd path="data_dml/20170531165522344_add_region_data.sql" removeOuts="First"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="61f051aff8cd61c00ab0ab578b19a3f5" author="TestUser1 (generated)" created="2017-06-02 09:03-0500" id="735r-1 (createTable tableName=Categories)" labels="create-table-categories.sql,ecloudpipeline" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Categories">
+            <column autoIncrement="true" name="CategoryID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CategoryName" type="nvarchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Description" type="ntext"/>
+            <column name="Picture" type="image"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="61f051aff8cd61c00ab0ab578b19a3f5" author="TestUser1 (generated)" created="2017-06-02 09:03-0500" id="735r-2 (addPrimaryKey constraintName=PK_Categories, tableName=Categories)" labels="create-table-categories.sql,ecloudpipeline" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CategoryID" constraintName="PK_Categories" schemaName="dbo" tableName="Categories"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="5d14d8b4564951f0085033c5574dbd2b" author="TestUser1 (generated)" created="2017-06-02 10:11-0500" id="mfmj-1 (createTable tableName=Customers)" labels="create_table_customer.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Customers">
+            <column name="CustomerID" type="nchar(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ContactName" type="nvarchar(30)"/>
+            <column name="ContactTitle" type="nvarchar(30)"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="Phone" type="nvarchar(24)"/>
+            <column name="Fax" type="nvarchar(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="5d14d8b4564951f0085033c5574dbd2b" author="TestUser1 (generated)" created="2017-06-02 10:11-0500" id="mfmj-2 (addPrimaryKey constraintName=PK_Customers, tableName=Customers)" labels="create_table_customer.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CustomerID" constraintName="PK_Customers" schemaName="dbo" tableName="Customers"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="8477a8e689b8c0fea47a4bf3c5b5b89c" author="TestUser1 (generated)" created="2017-06-02 10:49-0500" id="ynq4-1 (createTable tableName=Shippers)" labels="create_table_shippers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Shippers">
+            <column autoIncrement="true" name="ShipperID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Phone" type="nvarchar(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="8477a8e689b8c0fea47a4bf3c5b5b89c" author="TestUser1 (generated)" created="2017-06-02 10:49-0500" id="ynq4-2 (addPrimaryKey constraintName=PK_Shippers, tableName=Shippers)" labels="create_table_shippers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="ShipperID" constraintName="PK_Shippers" schemaName="dbo" tableName="Shippers"/>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="2e814d3c714ca8f7287ee538fb0acfd4" author="TestUser1 (generated)" created="2017-06-02 14:16-0500" id="e109-1 (createTable tableName=Suppliers)" labels="$all, create_table_suppliers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Suppliers">
+            <column autoIncrement="true" name="SupplierID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ContactName" type="nvarchar(30)"/>
+            <column name="ContactTitle" type="nvarchar(30)"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="Phone" type="nvarchar(24)"/>
+            <column name="Fax" type="nvarchar(24)"/>
+            <column name="HomePage" type="ntext"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="2e814d3c714ca8f7287ee538fb0acfd4" author="TestUser1 (generated)" created="2017-06-02 14:16-0500" id="e109-2 (addPrimaryKey constraintName=PK_Suppliers, tableName=Suppliers)" labels="$all, create_table_suppliers.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="SupplierID" constraintName="PK_Suppliers" schemaName="dbo" tableName="Suppliers"/>
+    </changeSet>
 </databaseChangeLog>
