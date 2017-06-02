@@ -70,4 +70,19 @@
         </comment>
         <appdba:sqlcmd path="data_dml/20170531165522344_add_region_data.sql" removeOuts="First"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="61f051aff8cd61c00ab0ab578b19a3f5" author="TestUser1 (generated)" created="2017-06-02 09:03-0500" id="735r-1 (createTable tableName=Categories)" labels="create-table-categories.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Categories">
+            <column autoIncrement="true" name="CategoryID" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CategoryName" type="nvarchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Description" type="ntext"/>
+            <column name="Picture" type="image"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="61f051aff8cd61c00ab0ab578b19a3f5" author="TestUser1 (generated)" created="2017-06-02 09:03-0500" id="735r-2 (addPrimaryKey constraintName=PK_Categories, tableName=Categories)" labels="create-table-categories.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CategoryID" constraintName="PK_Categories" schemaName="dbo" tableName="Categories"/>
+    </changeSet>
 </databaseChangeLog>
