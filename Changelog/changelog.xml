@@ -85,4 +85,26 @@
     <changeSet appdba:scriptChecksum="61f051aff8cd61c00ab0ab578b19a3f5" author="TestUser1 (generated)" created="2017-06-02 09:03-0500" id="735r-2 (addPrimaryKey constraintName=PK_Categories, tableName=Categories)" labels="create-table-categories.sql,ecloudpipeline" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CategoryID" constraintName="PK_Categories" schemaName="dbo" tableName="Categories"/>
     </changeSet>
+    <changeSet appdba:scriptChecksum="5d14d8b4564951f0085033c5574dbd2b" author="TestUser1 (generated)" created="2017-06-02 10:11-0500" id="mfmj-1 (createTable tableName=Customers)" labels="create_table_customer.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable schemaName="dbo" tableName="Customers">
+            <column name="CustomerID" type="nchar(5)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CompanyName" type="nvarchar(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ContactName" type="nvarchar(30)"/>
+            <column name="ContactTitle" type="nvarchar(30)"/>
+            <column name="Address" type="nvarchar(60)"/>
+            <column name="City" type="nvarchar(15)"/>
+            <column name="Region" type="nvarchar(15)"/>
+            <column name="PostalCode" type="nvarchar(10)"/>
+            <column name="Country" type="nvarchar(15)"/>
+            <column name="Phone" type="nvarchar(24)"/>
+            <column name="Fax" type="nvarchar(24)"/>
+        </createTable>
+    </changeSet>
+    <changeSet appdba:scriptChecksum="5d14d8b4564951f0085033c5574dbd2b" author="TestUser1 (generated)" created="2017-06-02 10:11-0500" id="mfmj-2 (addPrimaryKey constraintName=PK_Customers, tableName=Customers)" labels="create_table_customer.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:incrementalStatistics="false" appdba:padIndex="false" appdba:recomputeStatistics="true" columnNames="CustomerID" constraintName="PK_Customers" schemaName="dbo" tableName="Customers"/>
+    </changeSet>
 </databaseChangeLog>
