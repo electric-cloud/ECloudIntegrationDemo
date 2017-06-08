@@ -7,6 +7,6 @@
   <dbDefs xsi:type="dbproject:SqlServerDbDef" name="PROD" driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" hostname="demo-bld1-win.datical.net" port="1433" username="lrochette" password="bHJvY2hldHRl" labels="prod_ready &amp;&amp; !abandonned" environment="PROD" databaseName="ecloudintegration_prod" integratedSecurity="false" applicationName="Datical DB"/>
   <plans name="ECloudPipeline" databaseDefs="//@dbDefs[name='REF'] //@dbDefs[name='DEV'] //@dbDefs[name='QA'] //@dbDefs[name='SIT'] //@dbDefs[name='PROD']"/>
   <changelog href="Changelog/changelog.xml#//@databaseChangeLog"/>
-  <auditDB xsi:type="dbproject:OracleDbDef" name="AUDIT_DB_AWS" driver="oracle.jdbc.OracleDriver" hostname="aws-db1-rhel6.datical.net" port="1521" username="AUDIT_DB" password="a2V2aW5pc2Nvb2wjMQ==" dbDefType="audit" serviceName="pdborcl_sp.datical.net" enableCompression="false" rowsPerBatch="10000"/>
+  <auditDB xsi:type="dbproject:PostgresqlDbDef" name="AtheneAuditDB" driver="org.postgresql.Driver" hostname="localhost" port="5432" username="postgres" password="UGc4LjQuMTlwYXNz" dbDefType="audit" database="AtheneAuditDB"/>
   <schemas name="dbo"/>
 </dbproject:Project>
