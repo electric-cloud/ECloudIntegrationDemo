@@ -1,3 +1,0 @@
-line 1
-line 2 iwth label
-line 3
