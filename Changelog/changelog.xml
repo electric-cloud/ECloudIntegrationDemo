@@ -78,17 +78,4 @@
     <changeSet appdba:scriptChecksum="f77a10c16b558efd7096d4b13c2eada2" author="Administrator (generated)" created="2017-06-15 16:15+0000" id="nbmf-2 (addPrimaryKey constraintName=PK_Region5, tableName=Region5)" labels="$all, change6.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
         <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="RegionID" constraintName="PK_Region5" schemaName="dbo" tableName="Region5"/>
     </changeSet>
-    <changeSet appdba:scriptChecksum="4733509e711a552e227e40f369f6f0b8" author="Administrator (generated)" created="2018-03-05 22:35+0000" id="0zy4-1 (createTable tableName=Region7)" labels="$all, change7.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-        <createTable schemaName="dbo" tableName="Region7">
-            <column name="RegionID" type="int">
-                <constraints nullable="false"/>
-            </column>
-            <column name="RegionDescription" type="nchar(50)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-    <changeSet appdba:scriptChecksum="4733509e711a552e227e40f369f6f0b8" author="Administrator (generated)" created="2018-03-05 22:35+0000" id="0zy4-2 (addPrimaryKey constraintName=PK_Region7, tableName=Region7)" labels="$all, change7.sql" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
-        <addPrimaryKey appdba:allowPageLocks="true" appdba:allowRowLocks="true" appdba:fillFactor="0" appdba:ignoreDuplicateKeys="false" appdba:padIndex="false" appdba:recomputeStatistics="true" clustered="false" columnNames="RegionID" constraintName="PK_Region7" schemaName="dbo" tableName="Region7"/>
-    </changeSet>
 </databaseChangeLog>
